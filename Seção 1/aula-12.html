@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 12 // CLASS-BINDING</title>
+    <style type="text/css">
+        .color-red {
+            color:red;
+        }
+
+        .color-blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="root">
+    <button title="Titulo de botão"> Passe o mouse sobre o botão</button>
+    <button title="titulo">Passe o mouse sobre o botão</button>
+
+    <button v-bind:title="titulo">Passe o mouse sobre o botão</button> 
+    <!-- OU -->
+    <button :title="titulo">Passe o mouse sobre o botão</button>
+
+    <h1 :class="className">Olá Class Binding</h1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    var app = new Vue({
+        el:"#root",
+            data: {
+                titulo:'Agora o titulo modificado pelo Javascript Vue' ,
+                className: 'color-red'      
+            }    
+        }); 
+</script>
+
+</body>
+</html>
